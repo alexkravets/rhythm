@@ -2,7 +2,7 @@
 
 **Responsive typography foundation with vertical rhythm.**
 
-Inspired by (Medium.com)[https://medium.com/], based on (Typebase.css)[http://devinhunt.github.io/typebase.css/] & (Normalize.css)[http://necolas.github.io/normalize.css/]
+Inspired by [Medium.com](https://medium.com/), based on [Typebase.css](http://devinhunt.github.io/typebase.css/) & [Normalize.css](http://necolas.github.io/normalize.css/).
 
 Usage:
 
