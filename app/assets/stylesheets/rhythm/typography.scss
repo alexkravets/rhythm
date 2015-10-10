@@ -1,5 +1,5 @@
 /*
-  Rhythm Typography v0.1
+  Rhythm Typography
 
   Author: Alexander Kravets @ http://www.slatestudio.com
 
@@ -12,8 +12,6 @@
   @import "normalize-rails";
   @import "rhythm/typography";
 
-  //$baseColor:        rgba(0,0,0,0.8);
-  //$linkColor:        #222;
   $baseFontFamily:   'Georgia', serif;
   $headerFontFamily: 'Myriad Pro', sans-serif;
   $codeFontFamily:   'Monaco', monospace;
@@ -24,9 +22,7 @@
   $h3:               0.33 * 3.3;
 
   html {
-    @include typography( //$baseColor,
-                         //$linkColor,
-                         $baseFontFamily,
+    @include typography( $baseFontFamily,
                          $headerFontFamily,
                          $codeFontFamily,
                          $baseFontSize,
@@ -36,43 +32,6 @@
                          $h3 );
   }
 */
-
-// @mixin mediumLinkUnderline($color)    { color: $color;
-//                                         background-clip: border-box;
-//                                         background-image: linear-gradient(rgb(255, 255, 255) 50%, $color 50%);
-//                                         background-position: 0 1em;
-//                                         background-repeat: repeat-x;
-//                                         background-size: 2px 2px;
-//                                         text-decoration: none;
-//                                         word-break: break-all;
-// }
-
-// @mixin mediumHorizontalRule($color)   { position: relative;
-//                                         left: 50%;
-//                                         width: 4em;
-//                                         margin: 2.25em 0 2.25em -2em;
-//                                         border-top-style: solid;
-//                                         border-top-color: $color;
-//                                         border-left-width: 0px;
-//                                         border-right-width: 0px;
-//                                         border-bottom-width: 0px;
-// }
-
-// @mixin mediumUnorderedList($leading)  { list-style: none;
-//                                         list-style-image: none;
-//                                         padding: 0;
-//   li                                  { margin-left: $leading;
-//     &:before                          { content: '•';
-//                                         display: inline-block;
-//                                         position: absolute;
-//                                         list-style-type: none;
-//                                         list-style-image: none;
-//                                         font-size: 1em;
-//                                         padding: 0;
-//                                         margin-left: -1em;
-//     }
-//   }
-// }
 
 @mixin headerSize($fontSize, $baseLineHeight) {
   $lineHeight: ceil(100 * $baseLineHeight * ceil($fontSize / $baseLineHeight) / $fontSize);
@@ -84,9 +43,7 @@
                                         word-break:    normal;
 }
 
-@mixin typography( //$baseColor:        rgba(0,0,0,0.8),
-                   //$linkColor:        #222,
-                   $baseFontFamily:   serif,
+@mixin typography( $baseFontFamily:   serif,
                    $headerFontFamily: sans-serif,
                    $codeFontFamily:   monospace,
                    $baseFontSize:     20,
@@ -99,39 +56,38 @@
 
   /* Container font settings */
                                         font-family: $baseFontFamily;
-                                        font-size: $baseFontSize * 1px;
-                                        //color: $baseColor;
-                                        //letter-spacing: 0.02em;
+                                        font-size:   $baseFontSize * 1px;
 
   /* Copy & Lists */
-  p                                   { line-height: $leading;
-                                        margin-top: $leading;
+  p                                   { line-height:   $leading;
+                                        margin-top:    $leading;
                                         margin-bottom: $leading;
   }
 
   /* First passage after h3 */
   h3 + p                              { margin-top: 0; }
 
-  ul, ol                              { margin-top: $leading;
+  ul, ol                              { margin-top:    $leading;
                                         margin-bottom: $leading;
+
     li                                { line-height: $leading; }
-    ul, ol                            { margin-top: 0;
+
+    ul, ol                            { margin-top:    0;
                                         margin-bottom: 0;
     }
   }
-  //ul                                  { @include mediumUnorderedList($leading); }
-  blockquote                          { line-height: $leading;
-                                        margin-top: $leading;
+
+  blockquote                          { line-height:   $leading;
+                                        margin-top:    $leading;
                                         margin-bottom: $leading;
-                                        font-style: italic;
-                                        text-align: center;
+                                        font-style:    italic;
+                                        text-align:    center;
   }
 
   /* Headings */
   h1, h2, h3                          { /* Change heading typefaces here */
                                         font-family: $headerFontFamily;
                                         line-height: $leading;
-                                        //letter-spacing: 0em;
   }
   h1                                  { @include headerSize($h1, $baseLineHeight);
                                         margin-bottom: 0;
@@ -144,20 +100,12 @@
   /* Images */
   img                                 { max-width: 100%; }
 
-  /* Links */
-  // a                                   { @include mediumLinkUnderline($linkColor);
-  // }
-
-  /* Horizontal Rule */
-  // hr                                  { @include mediumHorizontalRule(lighten($baseColor, 80%));
-  // }
-
   /* Tables */
-  table                               { margin-top: $leading;
-                                        border-spacing: 0px;
+  table                               { margin-top:      $leading;
+                                        border-spacing:  0px;
                                         border-collapse: collapse;
   }
-  td, th                              { padding: 0;
+  td, th                              { padding:     0;
                                         line-height: $baseLineHeight * $baseFontSize - 0px;
   }
 
@@ -166,14 +114,14 @@
                                         // Not ideal, but works.
                                         vertical-align : bottom;
                                         // Override normalize default value.
-                                        font-family    : $codeFontFamily;
+                                        font-family:     $codeFontFamily;
   }
-  pre                                 { font-family: $codeFontFamily;
-                                        font-size: .67em;
-                                        line-height: $leading;
-                                        margin-top: 0;
-                                        margin-bottom: 0;
-                                        padding: .65em 1em;
+  pre                                 { font-family:    $codeFontFamily;
+                                        font-size:      .67em;
+                                        line-height:    $leading;
+                                        margin-top:     0;
+                                        margin-bottom:  0;
+                                        padding:        .65em 1em;
                                         vertical-align: bottom;
   }
 }

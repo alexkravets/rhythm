@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["alex@slatestudio.com"]
   spec.description   = %q{Responsive typography foundation with vertical rhythm}
   spec.summary       = %q{Responsive typography foundation with vertical rhythm}
-  spec.homepage      = "https://github.com/slate-studio/rhythm"
+  spec.homepage      = "https://github.com/alexkravets/rhythm"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
