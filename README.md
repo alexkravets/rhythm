@@ -8,7 +8,7 @@ Based on [Typebase.css](http://devinhunt.github.io/typebase.css/) & [Normalize.c
 
 Add `rhythm` to `Gemfile`:
 
-  gem 'rhythm', github: 'alexkravets/rhythm'
+    gem 'rhythm', github: 'alexkravets/rhythm'
 
 Add typography styles to `application.scss`:
 
@@ -37,3 +37,7 @@ $h3:               0.33 * 3.3;
                        $h3 );
 }
 ```
+
+## License
+
+Copyright © 2015 [Alexander Kravets](https://github.com/alexkravets). Loft is free software, and may be redistributed under the terms specified in the [license](LICENSE.md).
